@@ -1,0 +1,22 @@
+In this task you will see a list of words one at a time on the screen. Try to remember the ORDER of the words you see.
+
+
+After all of the words have been shown, you will see some short math problems. If the answer to the math problem is correct, press "T" for True. If the answer to the math problem is incorrect, press "F" for False.
+
+
+After the math problems, you will hear a BEEP. When you hear the beep, say the words OUT LOUD in the order they were shown, speaking clearly into the microphone. If you cannot remember a word, just say the next word you do remember and keep going.
+
+
+You will have a fixed amount of time to recall each list. If you finish early, you can press the "ENTER" key to move on to the next list.
+
+
+You will repeat this process until all of the lists have been completed.
+
+
+It is important to remember that the task is meant to be difficult, so try not to get discouraged if you can't remember the order of the words. All we ask is for you to try your best!
+
+
+If you have any questions about the study, please ask the researcher now.
+
+
+Otherwise, press any key to continue to the practice list.

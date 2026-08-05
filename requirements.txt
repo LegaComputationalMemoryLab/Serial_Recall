@@ -1,0 +1,5 @@
+# Tested on macOS (Apple Silicon) with Python 3.10
+psychopy==2026.2.1
+pyxid2==1.0.9
+sounddevice==0.5.5
+soundfile==0.14.0
