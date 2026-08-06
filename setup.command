@@ -4,14 +4,35 @@
 # It installs a private Python 3.10 environment with PsychoPy -- nothing
 # outside this folder is modified (except installing uv if missing).
 set -e
+set -o pipefail
 cd "$(dirname "$0")"
 
 echo "=== SR1 setup ==="
 
-# 1. uv (fast Python installer) -- install if missing
+# 1. uv (fast Python installer) -- install if missing.
+# Primary method is the official astral.sh installer. Some university /
+# corporate networks (or a VPN) block astral.sh, which shows up as
+# "curl: (6) Could not resolve host: astral.sh". Fall back to Homebrew or
+# pip so setup still completes on those networks.
 if ! command -v uv >/dev/null 2>&1 && [ ! -x "$HOME/.local/bin/uv" ]; then
     echo "Installing uv..."
-    curl -LsSf https://astral.sh/uv/install.sh | sh
+    if curl -LsSf https://astral.sh/uv/install.sh | sh; then
+        :
+    elif command -v brew >/dev/null 2>&1; then
+        echo "astral.sh unreachable -- installing uv via Homebrew instead..."
+        brew install uv
+    elif command -v pip3 >/dev/null 2>&1; then
+        echo "astral.sh unreachable -- installing uv via pip3 instead..."
+        pip3 install --user uv
+    else
+        echo "" >&2
+        echo "ERROR: could not install 'uv'." >&2
+        echo "Your machine could not reach astral.sh, and neither Homebrew" >&2
+        echo "nor pip3 is available as a fallback." >&2
+        echo "Fixes: connect to the internet / turn off VPN and re-run, or" >&2
+        echo "install Homebrew (https://brew.sh) then double-click this file again." >&2
+        exit 1
+    fi
 fi
 export PATH="$HOME/.local/bin:$PATH"
 
