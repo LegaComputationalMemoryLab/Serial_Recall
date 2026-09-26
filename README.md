@@ -3,7 +3,7 @@
 PsychoPy serial recall task for the Texas Computational Memory Lab
 (Lega Lab) UT Southwestern Medical Center. 
 
-Task last modified: May 2026 (Om Kherde - Om.Kherde@UTSouthwestern.edu) 
+Task last modified: June 2026 (Om Kherde - Om.Kherde@UTSouthwestern.edu) 
 
 **Task flow, per list:** fixation → 10 words shown one at a time (encoding)
 → true/false math distractor (prevents rehearsal) → beep → the participant
